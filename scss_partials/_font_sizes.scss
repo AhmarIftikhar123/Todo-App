@@ -1,0 +1,38 @@
+$rem_25: 0.25rem;
+$rem_5: 0.5rem;
+$rem_75: 0.75rem;
+$rem_1: 1rem;
+$rem_1_15: 1.15rem;
+$rem_1_25: 1.25rem;
+$rem_1_5: 1.5rem;
+$rem_1_75: 1.75rem;
+$rem_1_85: 1.85rem;
+$rem_2: 2rem;
+$rem_2_25: 2.25rem;
+$rem_2_5: 2.5rem;
+$rem_2_75: 2.75rem;
+$rem_3: 3rem;
+
+$font-sizes: (
+  25: 0.25rem,
+  5: 0.5rem,
+  75: 0.75rem,
+  1: 1rem,
+  1_15: 1.15rem,
+  1_25: 1.25rem,
+  1_5: 1.5rem,
+  1_75: 1.75rem,
+  1_85: 1.85rem,
+  2: 2rem,
+  2_25: 2.25rem,
+  2_5: 2.5rem,
+  2_75: 2.75rem,
+  3: 3rem,
+);
+
+// Generate utility classes for font sizes
+@each $size, $value in $font-sizes {
+  .fs_#{$size} {
+    font-size: $value;
+  }
+}

@@ -1,0 +1,319 @@
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.fs_25 {
+  font-size: 0.25rem;
+}
+
+.fs_5 {
+  font-size: 0.5rem;
+}
+
+.fs_75 {
+  font-size: 0.75rem;
+}
+
+.fs_1 {
+  font-size: 1rem;
+}
+
+.fs_1_15 {
+  font-size: 1.15rem;
+}
+
+.fs_1_25 {
+  font-size: 1.25rem;
+}
+
+.fs_1_5 {
+  font-size: 1.5rem;
+}
+
+.fs_1_75 {
+  font-size: 1.75rem;
+}
+
+.fs_1_85 {
+  font-size: 1.85rem;
+}
+
+.fs_2 {
+  font-size: 2rem;
+}
+
+.fs_2_25 {
+  font-size: 2.25rem;
+}
+
+.fs_2_5 {
+  font-size: 2.5rem;
+}
+
+.fs_2_75 {
+  font-size: 2.75rem;
+}
+
+.fs_3 {
+  font-size: 3rem;
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+  font-weight: 400;
+}
+
+img,
+video,
+picture,
+svg {
+  max-width: 100%;
+  width: 1.75rem;
+}
+@media (width < 576px) {
+  img,
+  video,
+  picture,
+  svg {
+    width: 1rem;
+  }
+}
+
+/* Set base font size to 10px (62.5% of 16px) for easy rem calculations */
+@media (width < 480px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+/* Ensure body takes at least the full viewport height */
+body {
+  background: linear-gradient(50deg, darkgray, #ffffff);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* @font-face rule for custom fonts */
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-Black.ttf");
+  font-weight: 900;
+}
+.main_container {
+  margin-top: 3rem;
+  height: 100vh;
+  max-width: 800px;
+  margin-inline: auto;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (width < 992px) {
+  .main_container {
+    max-width: 500px;
+  }
+}
+@media (width < 480px) {
+  .main_container {
+    padding-inline: 1rem;
+  }
+}
+
+.main_container h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  gap: 0.5rem;
+}
+@media (width < 480px) {
+  .main_container h1 {
+    font-size: 2rem !important;
+  }
+}
+.main_container .left_side,
+.main_container .right_side {
+  width: 100%;
+}
+.main_container .left_side {
+  display: grid;
+  gap: 0.5rem;
+}
+.main_container .left_side label {
+  font-weight: 600;
+}
+.main_container input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+}
+.main_container input:hover {
+  cursor: text;
+}
+.main_container input:focus {
+  background-color: darkgray;
+  color: #ffffff;
+}
+.main_container input::-moz-placeholder:focus {
+  color: #ffffff;
+}
+.main_container input::placeholder:focus {
+  color: #ffffff;
+}
+.main_container button {
+  width: 100%;
+  border-radius: 1rem;
+  border: transparent;
+  padding: 0.75rem 1.75rem;
+  margin-top: 1rem;
+  font-weight: 900;
+  position: relative;
+}
+@media (width < 480px) {
+  .main_container button {
+    padding: 0.75rem 0.75rem 0.75rem 1.5rem !important;
+  }
+}
+.main_container button:not(button[type=submit])::before {
+  content: "";
+  position: absolute;
+  top: 1.15rem;
+  left: 0.85%;
+  width: 1rem;
+  height: 1rem;
+  background-image: url(assests/imgs/unchecked.png);
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+}
+@media (width < 768px) {
+  .main_container button:not(button[type=submit])::before {
+    left: 0.35rem;
+    top: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+.main_container button.active {
+  text-decoration: line-through;
+  background-color: darkgray !important;
+}
+.main_container button.active::before {
+  background-image: url(assests/imgs/checked.png) !important;
+}
+.main_container button:not(button[type=button]) {
+  text-transform: uppercase;
+}
+.main_container .right_side h3 {
+  font-weight: 900;
+  flex-basis: 50%;
+}
+.main_container .right_side .task_box {
+  width: 95%;
+}
+.main_container .right_side .todo {
+  gap: 0.5rem;
+}
+.main_container #taskContainer {
+  padding: 0.25rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  max-height: 20rem;
+  min-height: 3rem;
+  background-color: #ffffff;
+  gap: 0.25rem;
+  place-items: baseline;
+  overflow-y: scroll;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.pointer:hover {
+  opacity: 0.8;
+}
+
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.error {
+  outline: 1px solid rgba(255, 0, 0, 0.815) !important;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.match {
+  background-color: skyblue !important;
+}/*# sourceMappingURL=style.css.map */

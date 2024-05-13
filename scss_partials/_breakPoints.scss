@@ -1,0 +1,51 @@
+$breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// Mixin for xs breakpoint
+@mixin xs {
+  @media (width < map-get($breakpoints, xs)) {
+    @content;
+  }
+}
+
+// Mixin for sm breakpoint
+@mixin sm {
+  @media (width < map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+// Mixin for md breakpoint
+@mixin md {
+  @media (width < map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+// Mixin for lg breakpoint
+@mixin lg {
+  @media (width < map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+// Mixin for xl breakpoint
+@mixin xl {
+  @media (width < map-get($breakpoints, xl)) {
+    @content;
+  }
+}
+
+// Mixin to generate media query
+@mixin custom_bp($point) {
+  @if map-has-key($breakpoints, $point) {
+    @media (min-width: map-get($breakpoints, $point)) {
+      @content;
+    }
+  }
+}

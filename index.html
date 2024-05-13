@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assests/imgs/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="after_purgecss.css" />
+    <title>Todo App | Sass & Jquery</title>
+  </head>
+  <body>
+    <main class="main_container flex align-items-center">
+      <h1 class="fs_3 flex align-items-center">
+        <img
+          src="assests/imgs/icon.png"
+          alt=""
+          style="width: 3rem !important"
+        />Todo App
+      </h1>
+      <!-- left-side -->
+      <form class="left_side">
+        <label for="taskInput" class="block">Task</label>
+
+        <input
+          type="text"
+          id="taskInput"
+          class="transition pointer"
+          placeholder="Enter task"
+        />
+
+        <label for="assigneeInput" class="block">Assign To</label>
+
+        <input
+          type="text"
+          id="assigneeInput"
+          class="transition pointer"
+          placeholder="Name of Person"
+        />
+
+        <button
+          type="submit"
+          id="addTaskBtn"
+          class="btn btn-primary pointer transition fs_75"
+        >
+          Add Task
+        </button>
+      </form>
+      <!-- right_side -->
+      <div class="right_side">
+        <div class="search_box flex align-items-center justify-content-between">
+          <h3 class="tastHeading fs_1">Search Tasks</h3>
+          <input
+            type="text"
+            id="searchTask"
+            placeholder="Search Task Here"
+            class="transition pointer"
+          />
+        </div>
+        <div id="taskContainer" class="grid">
+          <button
+            type="button"
+            class="todo pointer transition flex align-items-center justify-content-between active"
+          >
+            <div
+              class="task_box flex align-items-center justify-content-between"
+            >
+              <span class="taskTxt transition hover">Learn Sass</span>
+              <span class="personName transition hover">Ahmar</span>
+            </div>
+            <img
+              src="assests/imgs/cross.png"
+              alt="cross"
+              class="hover transition"
+            />
+          </button>
+
+          <button
+            type="button"
+            class="todo pointer transition flex align-items-center justify-content-between active"
+          >
+            <div
+              class="task_box flex align-items-center justify-content-between"
+            >
+              <span class="taskTxt transition hover">Learn Jquery</span>
+              <span class="personName transition hover">Ahmar</span>
+            </div>
+            <img
+              src="assests/imgs/cross.png"
+              alt="cross"
+              class="hover transition"
+            />
+          </button>
+        </div>
+      </div>
+
+      <!-- template -->
+      <template id="taskBtn">
+        <button
+          type="button"
+          class="todo pointer transition flex align-items-center justify-content-between"
+        >
+          <div class="task_box flex align-items-center justify-content-between">
+            <span class="taskTxt transition hover">Your task here</span>
+            <span class="personName transition hover">Ahmar</span>
+          </div>
+          <img
+            src="assests/imgs/cross.png"
+            alt="cross"
+            class="hover transition"
+          />
+        </button>
+      </template>
+    </main>
+  </body>
+
+  <!-- jquery CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <!-- custom js file attached -->
+  <script src="jquery.js"></script>
+</html>

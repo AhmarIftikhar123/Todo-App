@@ -1,0 +1,214 @@
+@import "scss/breakPoints";
+
+@import "scss/displayUtilities";
+
+@import "scss/font_sizes";
+
+$f_w_400: 400;
+$f_w_600: 600;
+$f_w_900: 900;
+$light-gray: darkgray;
+$white: #ffffff;
+$min_height: 100vh;
+$redDark: rgba(255, 0, 0, 0.815);
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+  font-weight: $f_w_400;
+}
+img,
+video,
+picture,
+svg {
+  max-width: 100%;
+  width: $rem_1_75;
+  @include sm {
+    width: $rem_1;
+  }
+  // visibility: hidden;
+}
+/* Set base font size to 10px (62.5% of 16px) for easy rem calculations */
+html {
+  @include xs {
+    font-size: 85%;
+  }
+}
+
+/* Ensure body takes at least the full viewport height */
+body {
+  background: linear-gradient(50deg, $light-gray, $white);
+  min-height: $min_height;
+  overflow: hidden;
+}
+
+/* @font-face rule for custom fonts */
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-Regular.ttf");
+  font-weight: $f_w_400;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-SemiBold.ttf");
+  font-weight: $f_w_600;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("assests/Poppins/Poppins-Black.ttf");
+  font-weight: $f_w_900;
+}
+
+.main_container {
+  margin-top: $rem_3;
+  height: $min_height;
+  max-width: 800px;
+  margin-inline: auto;
+  flex-direction: column;
+  gap: $rem_1;
+
+  @include lg {
+    max-width: 500px;
+  }
+  @include xs {
+    padding-inline: $rem_1;
+  }
+}
+
+.main_container {
+  h1 {
+    font-weight: $f_w_900;
+    text-transform: uppercase;
+    gap: $rem_5;
+    @include xs {
+      font-size: $rem_2 !important;
+    }
+  }
+  .left_side,
+  .right_side {
+    width: 100%;
+  }
+
+  // left_side
+  .left_side {
+    display: grid;
+    gap: $rem_5;
+
+    label {
+      font-weight: $f_w_600;
+    }
+  }
+  input {
+    width: 100%;
+    padding: $rem_1 $rem_1_25;
+    border-radius: $rem_1;
+    border: none;
+    outline: none;
+    &:hover {
+      cursor: text;
+    }
+    &:focus {
+      background-color: $light-gray;
+      color: $white;
+    }
+    &::placeholder {
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    border-radius: 1rem;
+    border: transparent;
+    padding: $rem_75 $rem_1_75;
+    margin-top: $rem_1;
+    font-weight: $f_w_900;
+    position: relative;
+    @include xs {
+      padding: $rem_75 $rem_75 $rem_75 $rem_1_5 !important;
+    }
+  }
+  button:not(button[type="submit"]) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: $rem_1_15;
+      left: 0.85%;
+      width: $rem_1;
+      height: $rem_1;
+      background-image: url(assests/imgs/unchecked.png);
+      background-size: cover;
+      background-position: center center;
+      border-radius: 50%;
+      @include md {
+        left: 0.35rem;
+        top: $rem_1;
+        width: $rem_75;
+        height: $rem_75;
+      }
+    }
+  }
+
+  button.active {
+    text-decoration: line-through;
+    background-color: $light-gray !important;
+    &::before {
+      background-image: url(assests/imgs/checked.png) !important;
+    }
+  }
+  button:not(button[type="button"]) {
+    text-transform: uppercase;
+  }
+  .right_side {
+    h3 {
+      font-weight: $f_w_900;
+      flex-basis: 50%;
+    }
+
+    .task_box {
+      width: 95%;
+    }
+    .todo {
+      gap: $rem_5;
+    }
+  }
+  #taskContainer {
+    padding: $rem_25;
+    margin-top: $rem_1;
+    border-radius: $rem_1;
+    max-height: 20rem;
+    min-height: $rem_3;
+    background-color: $white;
+    gap: $rem_25;
+    place-items: baseline;
+    overflow-y: scroll;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.error {
+  outline: 1px solid $redDark !important;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+.match {
+  background-color: skyblue !important;
+}

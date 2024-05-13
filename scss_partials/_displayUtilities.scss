@@ -1,0 +1,43 @@
+$display-types: (
+  block: block,
+  inline: inline,
+  inline-block: inline-block,
+  flex: flex,
+  grid: grid,
+);
+
+// Generate utility classes for each display type
+@each $class, $value in $display-types {
+  .#{$class} {
+    display: $value;
+  }
+}
+$align-items-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+$justify-content-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+
+// Generate utility classes for align-items
+@each $class, $value in $align-items-map {
+  .align-items-#{$class} {
+    align-items: $value;
+  }
+}
+
+// Generate utility classes for justify-content
+@each $class, $value in $justify-content-map {
+  .justify-content-#{$class} {
+    justify-content: $value;
+  }
+}
